@@ -4,6 +4,18 @@
 
 float average(int [], int);
 
+int average(int A[], int n)
+{
+    int sum =0;
+    float avg;
+    for(int i=0; i<n; i++)
+    {
+        sum += A[i];
+    }
+    avg= sum/((float) n) ;
+    return avg;
+}
+
 int main(void) {
   int x[] = {9,5,6,10,2,-3,4};
   assert ((average(x, 7) - 4.7142) < 0.001);
