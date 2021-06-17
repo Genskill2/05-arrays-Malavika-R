@@ -4,7 +4,7 @@
 
 float average(int [], int);
 
-int average(int A[], int n)
+float average(int A[], int n)
 {
     int sum =0;
     float avg;
