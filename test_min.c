@@ -3,7 +3,7 @@
 
 
 int min(int [], int);
-int max(int A[], int n)
+int min(int A[], int n)
 {
     int m = A[0], temp;
     for(int i=1; i<n ; i++)
