@@ -2,55 +2,58 @@
 #include <stdio.h>
 #include <math.h>
 
-int max(int arr[],int n)
+int max(int A[], int n)
 {
-for(int i=1;i<n;++i)
-{
-if(arr[0]<arr[i]){
-arr[0]=arr[i];
-}
-}
-return arr[0];
+    int m = A[0], temp;
+    for(int i=1; i<n ; i++)
+    {
+        if(A[i]>=m)
+            m= A[i];
+    }
+    return m;
 }
 
-int min(int arr[],int n)
+int min(int A[], int n)
 {
-for(int i=1;i<n;i++)
-{
-if(arr[i]<arr[0]){
-arr[0]=arr[i];
-}
-}
-return arr[0];
+    int m = A[0], temp;
+    for(int i=1; i<n ; i++)
+    {
+        if(A[i]<=m)
+            m= A[i];
+    }
+    return m;
 }
 
-float average(int arr[], int n)
+float average(int A[], int n)
 {
-float sum=0.0;
- for(int i=0;i<n;++i){
- sum=sum+arr[i];
- }
-float average=sum/n;
- 
- return average;
- }
- 
- int mode(int arr[], int n){
-int maxcount=0;
-for(int i=0;i<n;++i){
-int counts=0;
-
-for(int j=0;j<n;++j){
-if(arr[j]==arr[i])
-++counts;
-}
-if(counts>maxcount){
-maxcount=counts;
-}
-return arr[i];
-}
+    int sum =0;
+    float avg;
+    for(int i=0; i<n; i++)
+    {
+        sum += A[i];
+    }
+    avg= sum/((float) n) ;
+    return avg;
 }
 
+int mode(int A[], int n)
+{
+    int maxcount=0;
+    for(int i=0;i<n;i++)
+    {
+        int count=0;
+        for(int j=0;j<n;j++)
+        {
+            if(A[j]==A[i])
+                ++count;
+        }
+        if(count>maxcount)
+        {
+            maxcount=count;
+        }
+        return A[i];
+    }
+}
 
 int factors(int num,int arr[]){
 	int prime=2,ref=0;
