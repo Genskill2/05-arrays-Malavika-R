@@ -4,35 +4,33 @@
 
 int factors(int, int []);
 
-int factors(int n, int A[])
-{
-    int i=0, count =0;
-    while (n%2==0)
-    {
-        count++;
-        A[i++]=2;
-    }
-     while (n%3==0)
-    {
-        count++;
-        A[i++]=3;
-    }
-     while (n%5==0)
-    {
-        count++;
-        A[i++]=5;
-    }
-     while (n%11==0)
-    {
-        count++;
-        A[i++]=11;
-    }
-     while (n%13==0)
-    {
-        count++;
-        A[i++]=13;
-    }
-    return count;
+int factors(int num,int arr[]){
+	int prime=2,ref=0;
+	int count=0,index=0;
+	while(num!=1){
+		if(num%prime==0){
+			num=num/prime;
+			count++;
+			arr[index]=prime;
+			index++;
+		}
+		else{
+			while(1){
+				prime++;
+				for(int j=2;j<prime;j++){
+					if(prime%j==0)
+						ref++;
+				}
+				if(ref==0){
+					break;
+				}
+				else{
+					ref=0;
+				}
+			}
+		}
+	}
+	return count;
 }
 
 
