@@ -4,35 +4,6 @@
 
 int factors(int, int []);
 
-int factors(int num,int arr[]){
-	int prime=2,ref=0;
-	int count=0,index=0;
-	while(num!=1){
-		if(num%prime==0){
-			num=num/prime;
-			count++;
-			arr[index]=prime;
-			index++;
-		}
-		else{
-			while(1){
-				prime++;
-				for(int j=2;j<prime;j++){
-					if(prime%j==0)
-						ref++;
-				}
-				if(ref==0){
-					break;
-				}
-				else{
-					ref=0;
-				}
-			}
-		}
-	}
-	return count;
-}
-
 
 int main(void) {
   int ret[100] = {0};
