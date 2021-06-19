@@ -30,7 +30,7 @@ float average(int A[], int n)
     float avg;
     for(int i=0; i<n; i++)
     {
-        sum += A[i];
+        sum = sum+A[i];
     }
     avg= sum/((float) n) ;
     return avg;
